@@ -3,14 +3,9 @@
 	Start editing to see some magic happen :)
 </p>
 
-<div *ngFor="let tampil of board ; let i = index">
-	{{ tampil[i] }}
+<div *ngFor="let tampil of board">
+	{{ tampil }}
 </div>
-
-baris : <input type="text" [(ngModel)]="baris"> <br>
-kolom : <input type="text" [(ngModel)]="kolom">
-
-<button (click)="play(baris,kolom)">play</button>
 
 <ng-template *ngIf="pemain; then templatetrue; else templatefalse"></ng-template>
 
@@ -21,3 +16,8 @@ kolom : <input type="text" [(ngModel)]="kolom">
 <ng-template #templatefalse>
 	<p>Pemain 1</p>
 </ng-template>
+
+baris : <input type="number" [(ngModel)]="baris"> <br>
+kolom : <input type="number" [(ngModel)]="kolom">
+
+<button (click)="play(baris,kolom)">play</button>
