@@ -64,7 +64,7 @@ export class AppComponent {
         //Horizontal
         for (let a = 0; a < this.board.length; a++) {
           for (let b = 0; b < this.board.length; b++) {
-            if (this.board2[a][b] == this.board[i][j]) {
+            if (this.board2[a][b] != this.board[i][j]) {
               if (this.board[i][j] == "0") {
                 this.hasilP0 += 1;
                 this.board2.push = this.board2[i][j];
