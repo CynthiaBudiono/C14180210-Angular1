@@ -1,4 +1,23 @@
 <hello name="{{ name }}"></hello>
 <p>
-  Start editing to see some magic happen :)
+	Start editing to see some magic happen :)
 </p>
+
+<div *ngFor="let tampil of board ; let i = index">
+	{{ tampil[i] }}
+</div>
+
+baris : <input type="text" [(ngModel)]="baris"> <br>
+kolom : <input type="text" [(ngModel)]="kolom">
+
+<button (click)="play(baris,kolom)">play</button>
+
+<ng-template *ngIf="pemain; then templatetrue; else templatefalse"></ng-template>
+
+<ng-template #templatetrue>
+	<p>Pemain 0</p>
+</ng-template>
+
+<ng-template #templatefalse>
+	<p>Pemain 1</p>
+</ng-template>
