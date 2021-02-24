@@ -9,7 +9,7 @@ export class AppComponent {
   name = "User ";
   // index = 0;
 
-  board = [
+  board: String[][] = [
     ["*", "*", "*", "*", "*"],
     ["*", "*", "*", "*", "*"],
     ["*", "*", "*", "*", "*"],
@@ -35,22 +35,21 @@ export class AppComponent {
   // }
 
   play(r, c) {
-    r = r - 1;
-    c = c - 1;
+    // r = r - 1;
+    // c = c - 1;
     if (r < 0 && r > 5) {
       alert("Baris Melebihi Papan Board");
-    }
-    if (c < 0 && c > 5) {
+    } else if (c < 0 && c > 5) {
       alert("Kolom Melebihi Papan Board");
     } else {
       console.log(r + " " + c);
       console.log(this.board[r][c]);
-      if (this.board[r][c] == "*") {
+      if (this.board[r - 1][c - 1] == "*") {
         if (this.pemain == true) {
-          this.board[r][c] = "0";
+          this.board[r - 1][c - 1] = "0";
           this.pemain = false;
         } else {
-          this.board[r][c] = "1";
+          this.board[r - 1][c - 1] = "1";
           this.pemain = true;
         }
       } else {

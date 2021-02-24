@@ -3,9 +3,16 @@
 	Let's Play :)
 </p>
 
-<div *ngFor="let tampil of board">
+<!-- <div *ngFor="let tampil of board">
 	{{ tampil }}
-</div>
+</div> -->
+
+<label *ngFor="let a of board;">
+   <label *ngFor="let b of a;">
+     {{b}}
+   </label>
+<br>
+</label>
 
 <ng-template *ngIf="pemain; then templatetrue; else templatefalse"></ng-template>
 
