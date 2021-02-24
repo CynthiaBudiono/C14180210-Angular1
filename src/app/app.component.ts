@@ -19,8 +19,6 @@ export class AppComponent {
 
   baris = 1;
   kolom = 1;
-  kolP0 = 0;
-  kolP1 = 0;
   pemain: boolean = true;
 
   hasilP0 = 0;
@@ -37,10 +35,13 @@ export class AppComponent {
   // }
 
   play(r, c) {
+    r = r - 1;
+    c = c - 1;
     if (r < 0 && r > 5) {
-      alert("Baris Invalid");
-    } else if (c < 0 && c > 5) {
-      alert("Kolom Invalid");
+      alert("Baris Melebihi Papan Board");
+    }
+    if (c < 0 && c > 5) {
+      alert("Kolom Melebihi Papan Board");
     } else {
       console.log(r + " " + c);
       console.log(this.board[r][c]);
