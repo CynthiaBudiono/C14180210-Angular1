@@ -1,6 +1,6 @@
 <hello name="{{ name }}"></hello>
 <p>
-	Start editing to see some magic happen :)
+	Let's Play :)
 </p>
 
 <div *ngFor="let tampil of board">
@@ -17,7 +17,18 @@
 	<p>Pemain 1</p>
 </ng-template>
 
-baris : <input type="number" [(ngModel)]="baris"> <br>
-kolom : <input type="number" [(ngModel)]="kolom">
+<p>baris : <input type="number" [(ngModel)]="baris"></p>
+	<p>kolom : <input type="number" [(ngModel)]="kolom"></p>
 
-<button (click)="play(baris,kolom)">play</button>
+
+		<button (click)="play(baris,kolom)" style="margin:10px; padding:8px; background-color:#3398FF; border:none; color:white; border-radius:4px;">play</button>
+
+		<ng-template *ngIf="win===1; then templateP0"></ng-template>
+		<ng-template #templateP0>
+			<p>Congrets!! Player 0 WIN :D</p>
+		</ng-template>
+
+		<ng-template *ngIf="win===2; then templateP1"></ng-template>
+		<ng-template #templateP1>
+			<p>Congrets!! Player 1 WIN :D</p>
+		</ng-template>

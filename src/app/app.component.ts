@@ -28,6 +28,8 @@ export class AppComponent {
 
   hasilP0 = 0;
   hasilP1 = 0;
+
+  win = 0;
   // papan() {
   //   for (var i: number = 0; i < 5; i++) {
   //     this.output[i] = [];
@@ -61,13 +63,24 @@ export class AppComponent {
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < 5; j++) {
         console.log(this.board[i][j]);
+        // console.log(this.board2.length);
         //Horizontal
-        for (let a = 0; a < this.board.length; a++) {
-          for (let b = 0; b < this.board.length; b++) {
+        if (this.board2.length == 0) {
+          //maunya nek masih kosong isi dulu
+          if (this.board[i][j] == "0") {
+            this.hasilP0 += 1;
+            // this.board2.push = this.board[i][j];
+          }
+          if (this.board[i][j] == "1") {
+            this.hasilP1 += 1;
+          }
+        }
+        for (let a = 0; a < this.board2.length; a++) {
+          for (let b = 0; b < this.board2.length; b++) {
             if (this.board2[a][b] != this.board[i][j]) {
               if (this.board[i][j] == "0") {
                 this.hasilP0 += 1;
-                this.board2.push = this.board2[i][j];
+                // this.board2.push = this.board[i][j];
               }
               if (this.board[i][j] == "1") {
                 this.hasilP1 += 1;
@@ -92,9 +105,11 @@ export class AppComponent {
     console.log("hasil P1 : " + this.hasilP1);
     if (this.hasilP0 == 4) {
       console.log("Player 0 WIN !!");
+      this.win = 1;
     }
     if (this.hasilP1 == 4) {
       console.log("Player 1 WIN !!");
+      this.win = 2;
     }
   }
 }
