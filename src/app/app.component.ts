@@ -37,13 +37,13 @@ export class AppComponent {
   play(r, c) {
     // r = r - 1;
     // c = c - 1;
-    if (r < 0 && r > 5) {
+    if (r < 1 || r > 5) {
       alert("Baris Melebihi Papan Board");
-    } else if (c < 0 && c > 5) {
+    } else if (c < 1 || c > 5) {
       alert("Kolom Melebihi Papan Board");
     } else {
-      console.log(r + " " + c);
-      console.log(this.board[r][c]);
+      // console.log(r + " " + c);
+      // console.log(this.board[r][c]);
       if (this.board[r - 1][c - 1] == "*") {
         if (this.pemain == true) {
           this.board[r - 1][c - 1] = "0";
@@ -62,7 +62,7 @@ export class AppComponent {
       this.hasilP0 = 0;
       this.hasilP1 = 0;
       for (let j = 0; j < 5; j++) {
-        console.log(this.board[i][j]);
+        // console.log(this.board[i][j]);
         if (this.board[i][j] == "0") {
           this.hasilP0 += 1;
         }
@@ -80,7 +80,7 @@ export class AppComponent {
           this.win = 2;
         }
       }
-      console.log("\n");
+      // console.log("\n");
     }
 
     //Vertikal
