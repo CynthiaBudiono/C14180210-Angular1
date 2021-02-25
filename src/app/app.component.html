@@ -32,10 +32,12 @@
 
 		<ng-template *ngIf="win===1; then templateP0"></ng-template>
 		<ng-template #templateP0>
-			<p>Congrets!! Player 0 WIN :D</p>
+			<label>Congrets!! Player 0 WIN :D</label>
 		</ng-template>
 
 		<ng-template *ngIf="win===2; then templateP1"></ng-template>
 		<ng-template #templateP1>
-			<p>Congrets!! Player 1 WIN :D</p>
+			<label>Congrets!! Player 1 WIN :D</label>
 		</ng-template>
+
+		<label id="chc"></label>
