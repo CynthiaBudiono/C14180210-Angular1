@@ -22,7 +22,6 @@ export class AppComponent {
   pemain: boolean = true;
   flag: boolean;
   hasil = 0;
-  choice: HTMLLabelElement;
   win = 0;
   huruf: String;
 
@@ -45,7 +44,6 @@ export class AppComponent {
       } else {
         console.log("pilih yang lain");
         alert("pilih yang lain");
-        this.choice = document.getElementById("chc") as HTMLLabelElement;
         this.pemain = !this.pemain;
       }
     }
